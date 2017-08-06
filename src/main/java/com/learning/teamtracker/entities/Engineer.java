@@ -2,12 +2,16 @@ package com.learning.teamtracker.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonPropertyOrder({"email"})
 public class Engineer {
 
 	//----------------------------------------------------------
 	
 	private String empId;
+	@NotNull(message="Name is a required field")
 	private String name;
 	private String email;
 	private List<Task> tasks;
